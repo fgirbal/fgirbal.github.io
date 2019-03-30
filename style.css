@@ -19,7 +19,7 @@ body {
 
 #name {
 	color: #484848;
-	font-weight: 600;
+	font-weight: 200;
 	font-size: 200%;
 }
 
@@ -43,7 +43,7 @@ body {
 
 .section-title {
 	color: #484848;
-	font-weight: 600;
+	font-weight: 400;
 	font-size: 160%;
 }
 
@@ -52,7 +52,7 @@ body {
 }
 
 .section-divider {
-	height: 1px;
+	height: 0px;
 	background-color: #E0E0E0;
 	width: 100%;
 	margin-top: 5px;
@@ -61,28 +61,46 @@ body {
 
 .content-subsection {
 	clear: both;
-	margin-bottom: 45px;
-	display: inline-block;
+	margin-bottom: 30px;
+	display: table;
 	width: 100%;
 }
 
+.subsection-left {
+	display: table-cell;
+	width: 80px;
+	padding-right: 10px;
+	vertical-align: top;
+}
+
+.subsection-right {
+	display: table-cell;
+	vertical-align: top;
+}
+
 .subsection-title {
-	font-weight: 600;
+	font-weight: 400;
 	font-size: 100%;
 }
 
 .subsection-subtitle {
 	font-weight: 400;
-	font-size: 90%;
+	font-size: 80%;
+	color: #696969;
+}
+
+.subsection-subtitle a {
+	color: #696969;
 }
 
 .subsection-description {
-	padding-top: 10px;
+	padding-top: 5px;
 	font-size: 80%;
+	color: #191919;
 }
 
 .subsection-image {
-	width: 80px;
+	width: 100%;
 	height: 80px;
 	float: left;
 	background-size: contain;
@@ -95,8 +113,6 @@ body {
 	width: 70px;
 	height: 70px;
 	background-clip: content-box;
-	margin: 10px;
-	margin-right: 15px;
 }
 
 .subsection-nav {
@@ -107,14 +123,14 @@ body {
 
 .subsection-link {
 	float: left;
-	font-weight: 200;
+	font-weight: 300;
 	background-color: #888888;
 	color: white;
 	padding-left: 8px;
 	padding-right: 8px;
 	padding-top: 3px;
 	padding-bottom: 6px;
-	border-radius: 5px;
+	border-radius: 3px;
 	margin-right: 5px;
 	transition: all 0.4s ease-out;
 }
@@ -131,7 +147,7 @@ a {
 }
 
 a:hover {
-	color: #7c7c7c;
+	color: #191919;
 }
 
 #contact {
@@ -147,4 +163,56 @@ a:hover {
 #divider {
 	margin-left: 3px;
 	margin-right: 3px;
+}
+
+@media only screen and (max-width: 600px) {
+	.subsection-left {
+		display: none;
+	}
+
+	#content-container {
+		padding: 3rem;
+		padding-right: 1rem;
+		padding-left: 1rem;
+	}
+
+	body {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.subsection-subtitle {
+		font-size: 90%;
+	}
+
+	.subsection-description {
+		font-size: 85%;
+		color: #464646;
+	}
+
+	.section-title {
+		font-size: 130%
+	}
+
+	.section-divider {
+		height: 1px;
+	}
+
+	.section-content {
+		padding-top: 15px
+	}
+
+	.content-section {
+		padding-top: 5px
+	}
+
+	#contact {
+		font-size: 95%;
+		color: #464646;
+	}
+
+	#nav {
+		font-size: 90%;
+		padding-bottom: 25px;
+	}
 }
