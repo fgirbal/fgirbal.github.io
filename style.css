@@ -172,6 +172,10 @@ a:hover {
 }
 
 @media only screen and (max-width: 600px) {
+	#name {
+		font-size: 150%;
+	}
+
 	.subsection-left {
 		display: none;
 	}
@@ -188,16 +192,16 @@ a:hover {
 	}
 
 	.subsection-subtitle {
-		font-size: 90%;
+		font-size: 80%;
 	}
 
 	.subsection-description {
-		font-size: 85%;
+		font-size: 80%;
 		color: #464646;
 	}
 
 	.section-title {
-		font-size: 130%
+		font-size: 120%
 	}
 
 	.section-divider {
@@ -213,12 +217,12 @@ a:hover {
 	}
 
 	#contact {
-		font-size: 95%;
+		font-size: 90%;
 		color: #464646;
 	}
 
 	#nav {
-		font-size: 90%;
+		font-size: 85%;
 		padding-bottom: 25px;
 	}
 }
@@ -246,7 +250,7 @@ a:hover {
 	}
 
 	.section-title {
-		font-size: 130%
+		font-size: 120%
 	}
 
 	.section-divider {
@@ -267,7 +271,7 @@ a:hover {
 	}
 
 	#nav {
-		font-size: 100%;
+		font-size: 90%;
 		padding-bottom: 30px;
 	}
 }
