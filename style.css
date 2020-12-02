@@ -32,6 +32,10 @@ body {
     background-color: var(--main-bg-color)
 }
 
+#five-logo {
+    background-image: url("img/five_logo.jpeg");
+}
+
 #content-container {
     max-width: 48rem;
     padding-top: 10rem;
@@ -364,6 +368,10 @@ a:hover {
         --contact-color: #DCDCDC;
         --footer-color: #808080;
         --smaller-ssection-description-color: #DCDCDC;
+    }
+
+    #five-logo {
+        background-image: url("img/five_logo_white.svg");
     }
 
     .subsection-link:hover {
