@@ -17,24 +17,310 @@
 <body>
 <div id="content-container">
     <div id="header">
-        <div id="name">Francisco Girbal Eiras</div>
-        <div id="title">PhD Candidate at the Autonomous Intelligent Machines and Systems CDT (University of Oxford)</div>
+        <!-- <div id="name">Francisco Girbal Eiras</div>
+        <div id="title">PhD student at the Autonomous Intelligent Machines and Systems CDT (University of Oxford)</div> -->
+
+        <div class="header-paragraph">
+            👋,<br><br>
+            My name is <b>Francisco Girbal Eiras</b>, and I'm a third year PhD student at the University of Oxford supervised by Prof. Philip Torr, Dr. Adel Bibi, and Dr. M. Pawan Kumar (Google DeepMind). <br><br>
+            My research focuses on using optimization to achieve <b>certifiable and efficient</b> machine learning <br><br>
+            🔗 Check out my <a href="https://scholar.google.com/citations?user=O_iJTgYAAAAJ&hl=en">Google Scholar</a> and <a href="https://github.com/fgirbal">Github</a>, or say hello on <a href="https://twitter.com/fgirbal">Twitter</a>, <a href="https://www.linkedin.com/in/franciscogirbaleiras/">LinkedIn</a> or <a href="mailto:removeifhuman-francisco.girbal@gmail.com">email</a>.
+        </div>
     </div>
     <div id="nav">
+        <div class="nav-elem"><a target="_self" href="#publications">publications & talks</a></div>
+        <div class="nav-elem">•</div>
         <div class="nav-elem"><a target="_self" href="#experience">experience</a></div>
         <div class="nav-elem">•</div>
-        <div class="nav-elem"><a target="_self" href="#publications">publications</a></div>
-        <div class="nav-elem">•</div>
         <div class="nav-elem"><a target="_self" href="#education">education</a></div>
-        <div class="nav-elem">•</div>
-        <div class="nav-elem"><a href="https://www.notion.so/fgirbal/Francisco-Eiras-s-blog-bdab22b3f2a545cd92a11b336f8fb210">blog</a></div>
+        <!-- <div class="nav-elem">•</div>
+        <div class="nav-elem"><a href="https://www.notion.so/fgirbal/Francisco-Eiras-s-blog-bdab22b3f2a545cd92a11b336f8fb210">blog</a></div> -->
         <div class="nav-elem">•</div>
         <div class="nav-elem"><a target="_self" href="#contact">contact</a></div>
         <div class="nav-elem">•</div>
         <div class="nav-elem"><a href="docs/CV.pdf">CV (pdf)</a></div>
     </div>
 
+    <div class="content-section" id="publications">
+        <!-- <div class="section-title">publications & talks</div>
+        <div class="section-divider"></div> -->
+
+        <!-- PRE-PRINTS -->
+        <!-- <div class="section-subtitle">• Pre-print:</div> -->
+        <div class="section-content">
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/2023_pinns.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">Provably Correct Physics-Informed Neural Networks</div>
+                    <div class="subsection-subtitle">
+                        F. Eiras, <a href="https://adelbibi.com">A. Bibi</a>, R. Bunel, K. Dj Dvijotham, <a href="https://www.robots.ox.ac.uk/~phst/">P. H. S. Torr</a>, <a href="https://mpawankumar.info/">M. Pawan Kumar</a><br>
+                        <a href="https://www.ml-verification.com/">2nd Workshop on Formal Verification of Machine Learning, ICML, 2023</a></a>
+                    </div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">workshop</div>
+                        <div class="subsection-description-btn" style="background-color: #AF3235; border-color: #AF3235;">outstanding paper award</div>
+                        <a class="subsection-link" href="https://arxiv.org/abs/2305.10157">paper</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/2023_certified_ml.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">Towards Certified Machine Learning</div>
+                    <div class="subsection-subtitle">
+                        F. Eiras<br>
+                        Presented at Columbia University (hosted by Prof. Suman Jana), New York University (hosted by Prof. Jinyang Li & Prof. Joseph Tassardi), University of California, Berkeley (hosted by Prof. Somayeh Sojoudi), and Stanford University (hosted by Prof. Clark Barret)
+                    </div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn" style="background-color: #006795; border-color: #006795;">talk</div>
+                        <a class="subsection-link" href="docs/certified_ml_07_2023.pdf">slides</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/2023_s_lipchitzness.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">Certifying Ensembles: A General Certification Theory with S-Lipschitzness</div>
+                    <div class="subsection-subtitle">
+                        A. Petrov*, F. Eiras, A. Sanyal, <a href="https://www.robots.ox.ac.uk/~phst/">P. H. S. Torr</a>, <a href="https://adelbibi.com">A. Bibi</a>*<br>
+                        <a href="https://icml.cc/Conferences/2023">International Conference of Machine Learning (ICML), 2023</a>
+                    </div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">conference</div>
+                        <a class="subsection-link" href="https://arxiv.org/abs/2304.13019">paper</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/2023_faithful_kd.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">Faithful Knowledge Distillation</div>
+                    <div class="subsection-subtitle">
+                        T. Lamb, R. Bunel, K. Dj Dvijotham, <a href="https://www.robots.ox.ac.uk/~phst/">P. H. S. Torr</a>, <a href="https://mpawankumar.info/">M. Pawan Kumar</a>, F. Eiras<br>
+                        <a>arXiv, 2023</a>
+                    </div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">pre-print</div>
+                        <a class="subsection-link" href="https://arxiv.org/abs/2306.04431">paper</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/2023_rancer.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">RANCER: Non-Axis Aligned Anisotropic Certification with Randomized Smoothing</div>
+                    <div class="subsection-subtitle">
+                        T. Rumezhak, F. Eiras, <a href="https://www.robots.ox.ac.uk/~phst/">P. H. S. Torr</a>, <a href="https://adelbibi.com">A. Bibi</a><br>
+                        <a href="https://wacv2023.thecvf.com/">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2023</a>
+                    </div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">conference</div>
+                        <a class="subsection-link" href="https://openaccess.thecvf.com/content/WACV2023/papers/Rumezhak_RANCER_Non-Axis_Aligned_Anisotropic_Certification_With_Randomized_Smoothing_WACV_2023_paper.pdf">paper</a>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+
+        <!-- JOURNALS -->
+        <!-- <div class="section-subtitle">• Journal:</div> -->
+        <!-- <div class="section-content"> -->
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/2021_ancer.gif")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">ANCER: Anisotropic Certification via Sample-wise Volume Maximization</div>
+                    <div class="subsection-subtitle">F. Eiras*, <a href="https://cemse.kaust.edu.sa/ece/people/person/motasem-alfarra">M. Alfarra</a>*, <a href="https://mpawankumar.info/">M. Pawan Kumar</a>, <a href="https://www.robots.ox.ac.uk/~phst/">P. H. S. Torr</a>, <a href="https://puneetkdokania.github.io/">P. K. Dokania</a>, <a href="http://www.bernardghanem.com/">B. Ghanem</a>, <a href="https://adelbibi.com">A. Bibi</a>*<br><a href="https://www.jmlr.org/tmlr/index.html">TMLR, 2022</a></div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">journal</div>
+                        <a class="subsection-link" href="https://arxiv.org/abs/2107.04570">paper</a>
+                    </div>
+                </div>
+            </div>
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/two_stage.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">A Two-Stage Optimization-based Motion Planner for Safe Urban Driving</div>
+                    <div class="subsection-subtitle">F. Eiras, M. Hawasly, <a href="https://agents.inf.ed.ac.uk/stefano-albrecht/">S. V. Albrecht</a>, <a href="http://homepages.inf.ed.ac.uk/sramamoo/">S. Ramamoorthy</a><br><a href="https://www.ieee-ras.org/publications/t-ro">IEEE Transactions on Robotics (T-RO), 2021</a></div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">journal</div>
+                        <a class="subsection-link" href="https://arxiv.org/abs/2002.02215">paper</a>
+                        <a class="subsection-link" href="docs/eiras2021twostage.bib">bibTeX</a>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+
+        <!-- CONFERENCES -->
+        <!-- <div class="section-subtitle">• Conference:</div> -->
+        <!-- <div class="section-content"> -->
+
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/2020_pilot.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">PILOT: Efficient Planning by Imitation Learning and Optimisation for Safe Autonomous Driving</div>
+                    <div class="subsection-subtitle">H. Pulver, F. Eiras, L. Carozza, M. Hawasly, <a href="https://agents.inf.ed.ac.uk/stefano-albrecht/">S. V. Albrecht</a>, <a href="http://homepages.inf.ed.ac.uk/sramamoo/">S. Ramamoorthy</a><br><a href="https://www.iros2021.org/">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2021</a></div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">conference</div>
+                        <a class="subsection-link" href="https://arxiv.org/abs/2011.00509">paper</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/2021_occluded.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">Interpretable Goal Recognition in the Presence of Occluded Factors for Autonomous Vehicles</div>
+                    <div class="subsection-subtitle">
+                        <a href="https://homepages.inf.ed.ac.uk/jhanna2/">J. P. Hannah</a>, A. Rahman, E. Fosong, F. Eiras, M. Dobre, J. Redford, <a href="http://homepages.inf.ed.ac.uk/sramamoo/">S. Ramamoorthy</a> <a href="https://agents.inf.ed.ac.uk/stefano-albrecht/">S. V. Albrecht</a>
+                        <br>
+                        <a href="https://www.iros2021.org/">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2021</a></div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">conference</div>
+                        <a class="subsection-link" href="https://arxiv.org/abs/2108.02530">paper</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/mcts_gr.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">Interpretable Goal-based Prediction and Planning for Autonomous Driving</div>
+                    <div class="subsection-subtitle"><a href="https://agents.inf.ed.ac.uk/stefano-albrecht/">S. V. Albrecht</a>, C. Brewitt, J. Wilhelm, B. Gyevnar, F. Eiras, M. Dobre, <a href="http://homepages.inf.ed.ac.uk/sramamoo/">S. Ramamoorthy</a><br><a href="http://www.icra2021.org/">IEEE International Conference on Robotics and Automation (ICRA), 2021</a></div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">conference</div>
+                        <a class="subsection-link" href="https://arxiv.org/abs/2002.02277">paper</a>
+                        <a class="subsection-link" href="docs/albrecht2021interpretable.bib">bibTeX</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/parot.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">PaRoT: A Practical Framework for Robust Deep Neural Network Training</div>
+                    <div class="subsection-subtitle">E. Ayers, F. Eiras, M. Hawasly, I. Whiteside <br><a href="https://ti.arc.nasa.gov/events/nfm-2020/">12th NASA Formal Methods Symposium (NFM), 2020</a></div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">conference</div>
+                        <a class="subsection-link" href="https://arxiv.org/abs/2001.02152">paper</a>
+                        <a class="subsection-link" href="docs/ayers2020parot.bib">bibTeX</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/cbc_adas.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">Correct-by-Construction Advanced Driver Assistance Systems based on a Cognitive Architecture</div>
+                    <div class="subsection-subtitle">F. Eiras, <a href='http://mortezalahijanian.com/index.html'>M. Lahajinan</a>, <a href="http://www.cs.ox.ac.uk/marta.kwiatkowska/">M. Kwiatkowska</a> <br><a href='http://ieee-cavs.edu.umh.es/'>IEEE Connected and Automated Vehicles Symposium (CAVS), 2019</a> (Oral presentation)</div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">conference</div>
+                        <a class="subsection-link" href="https://arxiv.org/abs/1907.09603">paper</a>
+                        <a class="subsection-link" href="docs/eiras2019correct.bib">bibTeX</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/cube.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">Analytical Modeling of Vanishing Points and Curves in Catadioptric Cameras</div>
+                    <div class="subsection-subtitle"><a href='https://people.kth.se/~miraldo/'>P. Miraldo</a>, F. Eiras, <a href='https://www.cs.utah.edu/~srikumar/'>S. Ramalingam</a> <br><a href='http://cvpr2018.thecvf.com/'>IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2018</a></div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">conference</div>
+                        <a class="subsection-link" href="https://arxiv.org/abs/1804.09460">paper</a>
+                        <a class="subsection-link" href="docs/miraldo2018analytical.bib">bibTeX</a>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+
+        <!-- WORKSHOPS -->
+        <!-- <div class="section-subtitle">• Workshop:</div> -->
+        <!-- <div class="section-content"> -->
+            <!-- <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/robust_autonomy_2020.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">
+                        An Optimization-based Motion Planner for Safe Autonomous Driving
+                    </div>
+                    <div class="subsection-subtitle">
+                        F. Eiras, M. Hawasly, <a href="https://agents.inf.ed.ac.uk/stefano-albrecht/">S. V. Albrecht</a>, <a href="http://homepages.inf.ed.ac.uk/sramamoo/">S. Ramamoorthy</a><br><a href='https://sites.google.com/view/rss2020robustautonomy/home'>RSS 2020: Workshop on Safe Autonomy</a>
+                    </div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">workshop</div>
+                        <a class="subsection-link" href="https://openreview.net/pdf?id=s4nJ5EZy_N1">pdf</a>
+                    </div>
+                </div>
+            </div>
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/ida_workshop.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">Autonomous Driving with Interpretable Goal Recognition and Monte Carlo Tree Search</div>
+                    <div class="subsection-subtitle">C. Brewitt, <a href="https://agents.inf.ed.ac.uk/stefano-albrecht/">S. V. Albrecht</a>, J. Wilhelm, B. Gyevnar, F. Eiras, M. Dobre, <a href="http://homepages.inf.ed.ac.uk/sramamoo/">S. Ramamoorthy</a> <br><a href='https://sites.google.com/view/ida2020'>RSS 2020: Workshop on Interaction and Decision-Making in Autonomous-Driving</a></div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">workshop</div>
+                        <a class="subsection-link" href="https://drive.google.com/file/d/1dIWMbcAN35v8mCCcccWDbbBo7pSbKGuW/view?usp=sharing">pdf</a>
+                    </div>
+                </div>
+            </div>
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image" style='background-image: url("img/diff_plots.png")'></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-title">Towards Provably Correct Driver Assistance Systems through Stochastic Cognitive Modeling</div>
+                    <div class="subsection-subtitle">F. Eiras, <a href='http://mortezalahijanian.com/index.html'>M. Lahajinan</a> <br><a href='https://sites.google.com/view/rss19safe/home'>RSS 2019: Workshop on Safe Autonomy</a></div>
+                    <div class="subsection-nav">
+                        <div class="subsection-description-btn">workshop</div>
+                        <a class="subsection-link" href="https://openreview.net/pdf?id=H1luEtWjTE">pdf</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="subsection-description" style="padding-bottom: 15px">
+            <small>* indicates equal contribution.</small><br>
+            See all in <a href="https://scholar.google.com/citations?user=O_iJTgYAAAAJ&hl=en">Google Scholar</a>.
+        </div>
+    </div>
+
     <div class="content-section" id="experience">
+        <div class="section-title">experience</div>
+        <div class="section-divider"></div>
+
         <div class="section-content">
             <!-- <div class="content-subsection">
                 <div class="subsection-left">
@@ -48,6 +334,19 @@
                     </div>
                 </div>
             </div> -->
+            <div class="content-subsection">
+                <div class="subsection-left">
+                    <div class="subsection-image image-padded" id="five-logo"></div>
+                </div>
+                <div class="subsection-right">
+                    <div class="subsection-subtitle"><a href='http://five.ai'>Five</a>, Dec. 2022 - Jun. 2023</div>
+                    <div class="subsection-title">Research Scientist Intern</div>
+                    <div class="subsection-description">
+                    • Worked on referring image segmentation using a zero-shot method coupled with a contrastive loss to achieve
+                    the new unsupervised state-of-the-art in the field.
+                    </div>
+                </div>
+            </div>
             <div class="content-subsection">
                 <div class="subsection-left">
                     <div class="subsection-image image-padded" style='background-image: url("img/oxford.png")'></div>
@@ -85,7 +384,7 @@
                     <div class="subsection-description">Studied and developed new methods to perform pose estimation through vanishing points in general (central and non-central) omnidirectional cameras which lead to the publication of a paper in one of the top conferences in the field, IEEE CVPR 2018.</div>
                 </div>
             </div>
-            <div class="content-subsection">
+            <!-- <div class="content-subsection">
                 <div class="subsection-left">
                     <div class="subsection-image image-padded" style='background-image: url("img/isr.svg")'></div>
                 </div>
@@ -94,251 +393,7 @@
                     <div class="subsection-title">Research Student (Undergraduate)</div>
                     <div class="subsection-description">Constructed modules for gesture recognition through supervised learning using RGB-D cameras, from simple binary classification gestures (e.g. waving) to more complex regression ones (e.g. pointing estimation) and integrated them in a MOnarCH robot as part of the INSIDE project.</div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="content-section" id="publications">
-        <div class="section-title">publications</div>
-        <div class="section-divider"></div>
-
-        <!-- PRE-PRINTS -->
-        <div class="section-subtitle">• Pre-print:</div>
-        <div class="section-content">
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/2023_pinns.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">Provably Correct Physics-Informed Neural Networks</div>
-                    <div class="subsection-subtitle">
-                        F. Eiras, <a href="https://adelbibi.com">A. Bibi</a>, R. Bunel, K. Dj Dvijotham, <a href="https://www.robots.ox.ac.uk/~phst/">P. H. S. Torr</a>, <a href="https://mpawankumar.info/">M. Pawan Kumar</a><br>
-                        <a>arXiv, 2023</a>
-                    </div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://arxiv.org/abs/2305.10157">paper</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/2023_faithful_kd.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">Faithful Knowledge Distillation</div>
-                    <div class="subsection-subtitle">
-                        T. Lamb, R. Bunel, K. Dj Dvijotham, <a href="https://www.robots.ox.ac.uk/~phst/">P. H. S. Torr</a>, <a href="https://mpawankumar.info/">M. Pawan Kumar</a>, F. Eiras<br>
-                        <a>arXiv, 2023</a>
-                    </div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://arxiv.org/abs/2306.04431">paper</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- JOURNALS -->
-        <div class="section-subtitle">• Journal:</div>
-        <div class="section-content">
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/2021_ancer.gif")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">ANCER: Anisotropic Certification via Sample-wise Volume Maximization</div>
-                    <div class="subsection-subtitle">F. Eiras*, <a href="https://cemse.kaust.edu.sa/ece/people/person/motasem-alfarra">M. Alfarra</a>*, <a href="https://mpawankumar.info/">M. Pawan Kumar</a>, <a href="https://www.robots.ox.ac.uk/~phst/">P. H. S. Torr</a>, <a href="https://puneetkdokania.github.io/">P. K. Dokania</a>, <a href="http://www.bernardghanem.com/">B. Ghanem</a>, <a href="https://adelbibi.com">A. Bibi</a>*<br><a href="https://www.jmlr.org/tmlr/index.html">TMLR, 2022</a></div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://arxiv.org/abs/2107.04570">paper</a>
-                        <a class="subsection-link" href="https://www.notion.so/ANCER-Anisotropic-Certification-via-Sample-wise-Volume-Maximization-6a74a84feb094206a87a4e1e2f92cd95">blog post</a>
-                    </div>
-                </div>
-            </div>
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/two_stage.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">A Two-Stage Optimization-based Motion Planner for Safe Urban Driving</div>
-                    <div class="subsection-subtitle">F. Eiras, M. Hawasly, <a href="https://agents.inf.ed.ac.uk/stefano-albrecht/">S. V. Albrecht</a>, <a href="http://homepages.inf.ed.ac.uk/sramamoo/">S. Ramamoorthy</a><br><a href="https://www.ieee-ras.org/publications/t-ro">IEEE Transactions on Robotics (T-RO), 2021</a></div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://arxiv.org/abs/2002.02215">paper</a>
-                        <a class="subsection-link" href="docs/eiras2021twostage.bib">bibTeX</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- CONFERENCES -->
-        <div class="section-subtitle">• Conference:</div>
-        <div class="section-content">
-
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/2023_s_lipchitzness.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">Certifying Ensembles: A General Certification Theory with S-Lipschitzness</div>
-                    <div class="subsection-subtitle">
-                        A. Petrov*, F. Eiras, A. Sanyal, <a href="https://www.robots.ox.ac.uk/~phst/">P. H. S. Torr</a>, <a href="https://adelbibi.com">A. Bibi</a>*<br>
-                        <a href="https://icml.cc/Conferences/2023">International Conference of Machine Learning (ICML), 2023</a>
-                    </div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://arxiv.org/abs/2304.13019">paper</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/2023_rancer.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">RANCER: Non-Axis Aligned Anisotropic Certification with Randomized Smoothing</div>
-                    <div class="subsection-subtitle">
-                        T. Rumezhak, F. Eiras, <a href="https://www.robots.ox.ac.uk/~phst/">P. H. S. Torr</a>, <a href="https://adelbibi.com">A. Bibi</a><br>
-                        <a href="https://wacv2023.thecvf.com/">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2023</a>
-                    </div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://openaccess.thecvf.com/content/WACV2023/papers/Rumezhak_RANCER_Non-Axis_Aligned_Anisotropic_Certification_With_Randomized_Smoothing_WACV_2023_paper.pdf">paper</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/2020_pilot.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">PILOT: Efficient Planning by Imitation Learning and Optimisation for Safe Autonomous Driving</div>
-                    <div class="subsection-subtitle">H. Pulver, F. Eiras, L. Carozza, M. Hawasly, <a href="https://agents.inf.ed.ac.uk/stefano-albrecht/">S. V. Albrecht</a>, <a href="http://homepages.inf.ed.ac.uk/sramamoo/">S. Ramamoorthy</a><br><a href="https://www.iros2021.org/">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2021</a></div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://arxiv.org/abs/2011.00509">paper</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/2021_occluded.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">Interpretable Goal Recognition in the Presence of Occluded Factors for Autonomous Vehicles</div>
-                    <div class="subsection-subtitle">
-                        <a href="https://homepages.inf.ed.ac.uk/jhanna2/">J. P. Hannah</a>, A. Rahman, E. Fosong, F. Eiras, M. Dobre, J. Redford, <a href="http://homepages.inf.ed.ac.uk/sramamoo/">S. Ramamoorthy</a> <a href="https://agents.inf.ed.ac.uk/stefano-albrecht/">S. V. Albrecht</a>
-                        <br>
-                        <a href="https://www.iros2021.org/">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2021</a></div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://arxiv.org/abs/2108.02530">paper</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/mcts_gr.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">Interpretable Goal-based Prediction and Planning for Autonomous Driving</div>
-                    <div class="subsection-subtitle"><a href="https://agents.inf.ed.ac.uk/stefano-albrecht/">S. V. Albrecht</a>, C. Brewitt, J. Wilhelm, B. Gyevnar, F. Eiras, M. Dobre, <a href="http://homepages.inf.ed.ac.uk/sramamoo/">S. Ramamoorthy</a><br><a href="http://www.icra2021.org/">IEEE International Conference on Robotics and Automation (ICRA), 2021</a></div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://arxiv.org/abs/2002.02277">paper</a>
-                        <a class="subsection-link" href="docs/albrecht2021interpretable.bib">bibTeX</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/parot.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">PaRoT: A Practical Framework for Robust Deep Neural Network Training</div>
-                    <div class="subsection-subtitle">E. Ayers, F. Eiras, M. Hawasly, I. Whiteside <br><a href="https://ti.arc.nasa.gov/events/nfm-2020/">12th NASA Formal Methods Symposium (NFM), 2020</a></div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://arxiv.org/abs/2001.02152">paper</a>
-                        <a class="subsection-link" href="docs/ayers2020parot.bib">bibTeX</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/cbc_adas.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">Correct-by-Construction Advanced Driver Assistance Systems based on a Cognitive Architecture</div>
-                    <div class="subsection-subtitle">F. Eiras, <a href='http://mortezalahijanian.com/index.html'>M. Lahajinan</a>, <a href="http://www.cs.ox.ac.uk/marta.kwiatkowska/">M. Kwiatkowska</a> <br><a href='http://ieee-cavs.edu.umh.es/'>IEEE Connected and Automated Vehicles Symposium (CAVS), 2019</a> (Oral presentation)</div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://arxiv.org/abs/1907.09603">paper</a>
-                        <a class="subsection-link" href="docs/eiras2019correct.bib">bibTeX</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/cube.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">Analytical Modeling of Vanishing Points and Curves in Catadioptric Cameras</div>
-                    <div class="subsection-subtitle"><a href='https://people.kth.se/~miraldo/'>P. Miraldo</a>, F. Eiras, <a href='https://www.cs.utah.edu/~srikumar/'>S. Ramalingam</a> <br><a href='http://cvpr2018.thecvf.com/'>IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2018</a></div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://arxiv.org/abs/1804.09460">paper</a>
-                        <a class="subsection-link" href="docs/miraldo2018analytical.bib">bibTeX</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- WORKSHOPS -->
-        <div class="section-subtitle">• Workshop:</div>
-        <div class="section-content">
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/robust_autonomy_2020.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">
-                        An Optimization-based Motion Planner for Safe Autonomous Driving
-                    </div>
-                    <div class="subsection-subtitle">
-                        F. Eiras, M. Hawasly, <a href="https://agents.inf.ed.ac.uk/stefano-albrecht/">S. V. Albrecht</a>, <a href="http://homepages.inf.ed.ac.uk/sramamoo/">S. Ramamoorthy</a><br><a href='https://sites.google.com/view/rss2020robustautonomy/home'>RSS 2020: Workshop on Safe Autonomy</a>
-                    </div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://openreview.net/pdf?id=s4nJ5EZy_N1">pdf</a>
-                    </div>
-                </div>
-            </div>
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/ida_workshop.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">Autonomous Driving with Interpretable Goal Recognition and Monte Carlo Tree Search</div>
-                    <div class="subsection-subtitle">C. Brewitt, <a href="https://agents.inf.ed.ac.uk/stefano-albrecht/">S. V. Albrecht</a>, J. Wilhelm, B. Gyevnar, F. Eiras, M. Dobre, <a href="http://homepages.inf.ed.ac.uk/sramamoo/">S. Ramamoorthy</a> <br><a href='https://sites.google.com/view/ida2020'>RSS 2020: Workshop on Interaction and Decision-Making in Autonomous-Driving</a></div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://drive.google.com/file/d/1dIWMbcAN35v8mCCcccWDbbBo7pSbKGuW/view?usp=sharing">pdf</a>
-                    </div>
-                </div>
-            </div>
-            <div class="content-subsection">
-                <div class="subsection-left">
-                    <div class="subsection-image" style='background-image: url("img/diff_plots.png")'></div>
-                </div>
-                <div class="subsection-right">
-                    <div class="subsection-title">Towards Provably Correct Driver Assistance Systems through Stochastic Cognitive Modeling</div>
-                    <div class="subsection-subtitle">F. Eiras, <a href='http://mortezalahijanian.com/index.html'>M. Lahajinan</a> <br><a href='https://sites.google.com/view/rss19safe/home'>RSS 2019: Workshop on Safe Autonomy</a></div>
-                    <div class="subsection-nav">
-                        <a class="subsection-link" href="https://openreview.net/pdf?id=H1luEtWjTE">pdf</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="subsection-description" style="padding-bottom: 15px">
-            <small>* indicates equal contribution.</small><br>
-            See all in <a href="https://scholar.google.com/citations?user=O_iJTgYAAAAJ&hl=en">Google Scholar</a>.
+            </div> -->
         </div>
     </div>
 
@@ -354,7 +409,7 @@
                     <div class="subsection-subtitle"><a href='http://ox.ac.uk'>University of Oxford</a>, Oct. 2020 - Aug. 2024 (Expected)</div>
                     <div class="subsection-title">PhD in Engineering Science (AIMS)</div>
                     <div class="subsection-description"><b>Relevant courses</b>: Data Estimation & Inference, Machine Learning, Reinforcement Learning, Discriminative & Deep Learning for Big Data<br>
-                    <b>Supervisors</b>: Prof. Philip H.S. Torr and Prof. Pawan Kumar</div>
+                    <b>Supervisors</b>: Prof. Philip H.S. Torr, Dr. Adel Bibi and Dr. Pawan Kumar (Google DeepMind)</div>
                 </div>
             </div>
             <div class="content-subsection">
@@ -410,7 +465,7 @@
     </div>
 
     <div id="footer">
-        Copyright © 2022 Francisco Eiras
+        Copyright © 2023 Francisco Eiras
     </div>
 </div>
 </body>

@@ -21,6 +21,7 @@
     --ssection-link-hover-color: #202020;
     --ssection-link-bg-disabled-color: #DCDCDC;
     --ssection-link-disabled-color: #202020;
+    --ssection-description-btn-bg-color: #002147;
     --contact-color: #000000;
     --footer-color: #000000;
     --smaller-ssection-description-color: #464646;
@@ -47,6 +48,25 @@ body {
 
 #header {
     padding-bottom: 30px
+}
+
+.header-paragraph {
+    padding-top: 5px;
+    font-size: 90%;
+    color: var(--ssection-description-color);
+    margin-bottom: 50px;
+}
+
+.header-paragraph a {
+    border-bottom: 1px dotted var(--link-color);
+}
+
+.header-paragraph b {
+    color: var(--link-color);
+}
+
+.header-paragraph a:hover {
+    border-bottom: 1px dotted var(--link-hover-color);
 }
 
 #name {
@@ -192,6 +212,21 @@ body {
 .link-disabled {
     color: var(--ssection-link-disabled-color);
     background-color: var(--ssection-link-bg-disabled-color);
+}
+
+.subsection-description-btn {
+    float: left;
+    font-weight: 300;
+    background-color: var(--ssection-description-btn-bg-color);
+    color: white;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 3px;
+    padding-bottom: 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+    transition: all 0.4s ease-out;
+    border: 1px solid var(--ssection-description-btn-bg-color);
 }
 
 a {
