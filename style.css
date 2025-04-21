@@ -33,6 +33,10 @@ body {
     background-color: var(--main-bg-color)
 }
 
+#dynamo-logo {
+    background-image: url("img/dynamoai_logo_light.jpeg");
+}
+
 #five-logo {
     background-image: url("img/five_logo.jpeg");
 }
@@ -403,6 +407,10 @@ a:hover {
         --contact-color: #DCDCDC;
         --footer-color: #808080;
         --smaller-ssection-description-color: #DCDCDC;
+    }
+
+    #dynamo-logo {
+        background-image: url("img/dynamoai_logo_dark.png");
     }
 
     #five-logo {
