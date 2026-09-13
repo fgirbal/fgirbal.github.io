@@ -33,6 +33,10 @@ body {
     background-color: var(--main-bg-color)
 }
 
+#magentic-logo {
+    background-image: url("img/magentic_logo.svg");
+}
+
 #dynamo-logo {
     background-image: url("img/dynamoai_logo_light.jpeg");
 }
@@ -407,6 +411,10 @@ a:hover {
         --contact-color: #DCDCDC;
         --footer-color: #808080;
         --smaller-ssection-description-color: #DCDCDC;
+    }
+
+    #magentic-logo {
+        filter: invert(1);
     }
 
     #dynamo-logo {
