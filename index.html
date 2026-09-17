@@ -3,14 +3,51 @@
 <head>
     <meta charset="utf-8">
     <meta name="google-site-verification" content="UBdIq9BH1xni1XgCd1I6ld6SmS1wssdcUc0EEES5TFY"/>
-    <meta name="Francisco Girbal Eiras" CONTENT="Founding AI Engineer @ Magentic | PhD @ University of Oxford">
+    <meta name="description" content="Founding AI Engineer @ Magentic | PhD @ University of Oxford">
+    <meta name="author" content="Francisco Girbal Eiras">
 
-    <meta name="robots" content="index,nofollow">
+    <meta name="robots" content="index,follow">
 
     <title>Francisco Girbal Eiras</title>
 
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="canonical" href="https://fgirbal.github.io/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Francisco Girbal Eiras">
+    <meta property="og:description" content="Founding AI Engineer @ Magentic | PhD @ University of Oxford">
+    <meta property="og:url" content="https://fgirbal.github.io/">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Francisco Girbal Eiras">
+    <meta name="twitter:description" content="Founding AI Engineer @ Magentic | PhD @ University of Oxford">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Francisco Girbal Eiras",
+        "url": "https://fgirbal.github.io/",
+        "jobTitle": "Founding AI Engineer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Magentic"
+        },
+        "alumniOf": [
+            {"@type": "CollegeOrUniversity", "name": "University of Oxford"},
+            {"@type": "CollegeOrUniversity", "name": "EPFL"},
+            {"@type": "CollegeOrUniversity", "name": "Instituto Superior Técnico"}
+        ],
+        "sameAs": [
+            "https://scholar.google.com/citations?user=O_iJTgYAAAAJ&hl=en",
+            "https://github.com/fgirbal",
+            "https://twitter.com/fgirbal",
+            "https://www.linkedin.com/in/franciscogirbaleiras/"
+        ]
+    }
+    </script>
 
     <base target="_blank">
 </head>
@@ -589,8 +626,11 @@
     </div>
 
     <div id="footer">
-        Copyright © 2023 Francisco Eiras
+        Copyright © <span id="copyright-year">2023</span> Francisco Eiras
     </div>
+    <script>
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
 </div>
 </body>
 </html>

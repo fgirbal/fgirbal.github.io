@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Publications and talks — Francisco Girbal Eiras">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Publications — Francisco Girbal Eiras</title>
+
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <base target="_blank">
+</head>
+<body>
+
+    <nav class="site-nav">
+        <div class="wrap">
+            <a target="_self" href="index.html" class="brand">Francisco Girbal Eiras</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a target="_self" href="index.html">home</a>
+                <a target="_self" href="experience.html">experience</a>
+                <a target="_self" href="publications.html" aria-current="page">publications</a>
+                <a class="cv-link" href="../docs/CV.pdf">CV</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-head wrap">
+        <h1>Publications & talks</h1>
+        <p>Search by title/author, or filter by year.</p>
+    </header>
+
+    <section class="section wrap" style="border-top: none;">
+        <div class="pub-controls">
+            <input type="text" id="pub-search" placeholder="Search title or author…">
+            <select id="pub-year"></select>
+        </div>
+        <p class="pub-count" id="pub-count"></p>
+
+        <div id="pub-list"></div>
+
+        <p class="pub-note">
+            * indicates equal contribution. See everything on
+            <a href="https://scholar.google.com/citations?user=O_iJTgYAAAAJ&hl=en">Google Scholar</a>.
+        </p>
+    </section>
+
+    <footer class="site-footer wrap">
+        Copyright &copy; <span id="copyright-year">2026</span> Francisco Eiras
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
