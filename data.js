@@ -143,7 +143,7 @@ const PUBLICATIONS = [
         year: 2023,
         type: "talk",
         links: [
-            { label: "slides", href: "../docs/certified_ml_07_2023.pdf" }
+            { label: "slides", href: "docs/certified_ml_07_2023.pdf" }
         ]
     },
     {
@@ -196,7 +196,7 @@ const PUBLICATIONS = [
         type: "journal",
         links: [
             { label: "paper", href: "https://arxiv.org/abs/2002.02215" },
-            { label: "bibtex", href: "../docs/eiras2021twostage.bib" }
+            { label: "bibtex", href: "docs/eiras2021twostage.bib" }
         ]
     },
     {
@@ -219,7 +219,7 @@ const PUBLICATIONS = [
         type: "conference",
         links: [
             { label: "paper", href: "https://arxiv.org/abs/2002.02277" },
-            { label: "bibtex", href: "../docs/albrecht2021interpretable.bib" }
+            { label: "bibtex", href: "docs/albrecht2021interpretable.bib" }
         ]
     },
     {
@@ -232,7 +232,7 @@ const PUBLICATIONS = [
         award: "oral",
         links: [
             { label: "paper", href: "https://arxiv.org/abs/1907.09603" },
-            { label: "bibtex", href: "../docs/eiras2019correct.bib" }
+            { label: "bibtex", href: "docs/eiras2019correct.bib" }
         ]
     },
     {
@@ -244,7 +244,7 @@ const PUBLICATIONS = [
         type: "conference",
         links: [
             { label: "paper", href: "https://arxiv.org/abs/1804.09460" },
-            { label: "bibtex", href: "../docs/miraldo2018analytical.bib" }
+            { label: "bibtex", href: "docs/miraldo2018analytical.bib" }
         ]
     }
 ];
