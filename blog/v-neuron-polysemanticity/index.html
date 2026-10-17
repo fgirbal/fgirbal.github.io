@@ -100,6 +100,7 @@ th, td { text-align: left; padding: 0.4rem 0.5rem; border-bottom: 1px solid var(
 th { font-family: var(--f-head); font-weight: 500; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
 .verdict td { font-family: var(--f-body); font-size: 0.98rem; }
 .verdict td:first-child { font-family: var(--f-mono); font-size: 0.8rem; white-space: nowrap; }
+.verdict { min-width: 600px; }  /* on narrow screens the table keeps its width and scrolls sideways */
 .split { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 1rem 1.25rem; }
 .stage { position: relative; width: 100%; aspect-ratio: 1 / 1; }
 .stage img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; border-radius: 3px; }
@@ -209,7 +210,7 @@ footer { border-top: 1px solid var(--line); padding-block: 2rem 3rem; font-famil
   <div class="kicker">Interpretability · October 2026</div>
   <h1>On the polysemanticity of the V neuron</h1>
   <p class="dek">A widely shared essay argues that InceptionV1's most famous polysemantic neuron is really a clean V-shape detector. We tested that claim, with pre-registered predictions, on the neuron and on its main input.</p>
-  <div class="meta">Francisco Girbal Eiras · 13 min read</div>
+  <div class="meta">Francisco Girbal Eiras · 10 min read</div>
 </header>
 
 <div class="hero-anim" aria-hidden="true"><svg id="hero-anim" viewBox="0 0 680 132" preserveAspectRatio="xMidYMid meet"></svg></div>
