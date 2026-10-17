@@ -251,6 +251,7 @@ footer { border-top: 1px solid var(--line); padding-block: 2rem 3rem; font-famil
     <li><b>Wiring.</b> Each neuron is a weighted sum of the layer below, so every response splits exactly into contributions from individual inputs. That shows whether cats and cars arrive through the same inputs.</li>
     <li><b>Real photos.</b> Pointed-faced and round-faced breeds, grouped by breed standard before measuring.</li>
   </ul>
+  <p>Only the first test relies on synthetic shapes. The other four use real images, edited or as they are.</p>
   <p>Throughout, a neuron's output is scaled so that <b>1.0 is what it gives a typical top photo</b>. Before testing, we searched for each neuron's favorite V shape (apex angle, orientation and size) and froze it, to give the shape reading its best shot. That was a wide 120° wedge pointing down for <span class="nr">4e:55</span> (V neuron), and a narrow 30° wedge pointing left for <span class="nr">4d:493</span> (fox snout): a snout in profile. The tests used thousands of everyday photos across all 1,000 ImageNet categories, plus about 7,000 pet photos with outlines and face boxes.</p>
   <h3>Pre-registration</h3>
   <p>We ran two studies: one on <span class="nr">4e:55</span> (V neuron), then one on <span class="nr">4d:493</span> (fox snout). Each put its neuron through the same five tests. The second study also fixed a design flaw the first one exposed: in Test 3, the windows were too small to show the face.</p>
@@ -271,6 +272,7 @@ footer { border-top: 1px solid var(--line); padding-block: 2rem 3rem; font-famil
     <div class="cap">Each neuron sees its own favorite wedge. One texture and one fur patch are shown; the study averages use 60 different ones per condition.</div>
   </div>
   <p>Neither neuron responds much to shapes without content. Their best wedges reach about a tenth of a typical photo: 0.12 for <span class="nr">4e:55</span> (V neuron) and 0.10 for <span class="nr">4d:493</span> (fox snout). The pre-registered bar for a strong response was 0.3. Shape does matter in relative terms: the V drives 4e:55 about 5× and 4d:493 about 4× as strongly as an equal-area disk. For 4e:55 the sharpness of the point doesn't matter: the rounded V scores 0.11 against the V's 0.12. 4d:493 does prefer a sharp point, by +0.05 over the rounded V and +0.04 over the ellipse. That's real, but small. Eyes on a disk change nothing; on a fur-filled wedge they lift 4e:55 to about 0.21, still below the bar, and barely move 4d:493.</p>
+  <p>Importantly, this isn't because drawings can't reach neurons this deep. In a validity check run before the tests, some synthetic shape drove about 98% of the neurons in each of these two layers past the 0.3 bar, and known curve detectors reached a median of 0.78 of their natural maximum on drawn arcs. These two neurons just aren't among the ones a shape drives strongly.</p>
   <figure>
     <div class="legend" id="lg-shapes"></div>
     <div class="chart" id="c-shapes"></div>
@@ -362,7 +364,7 @@ footer { border-top: 1px solid var(--line); padding-block: 2rem 3rem; font-famil
     </tbody>
   </table></div>
   <p>These are results for two neurons in one network, with automated edits and our own operationalization of "V", which the essay never defines precisely. They don't show that the V is a useless way to describe what these neurons' top images have in common. They show that when shape and content are varied separately, shape explains a small part of what drives either neuron.</p>
-  <p>We're not claiming this proves or disproves the essay's larger thesis about how neural networks are organized, and that is exactly the point. Our tests support narrow conclusions about two neurons, which is also all the original V-neuron analysis could support.</p>
+  <p>We're not claiming this proves or disproves the essay's larger thesis, and that is exactly the point: our tests support <b>narrow conclusions about two neurons</b>, which is all the original V-neuron analysis could support too. The difference is that <b>we said in advance which results would count against the V</b>, something any explanation like it should do.</p>
 </section>
 
 <section aria-labelledby="close-h">
