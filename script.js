@@ -1,4 +1,10 @@
 function pubMetaLine(pub) {
+    // Blog posts and other non-venue entries: category label and date instead of a venue.
+    if (pub.category) {
+        return `<span class="pub-category">${pub.category}</span>` +
+            `<span class="pub-sep">&middot;</span>${pub.date}`;
+    }
+
     let venue = pub.venueHref
         ? `<a href="${pub.venueHref}">${pub.venue}</a>`
         : pub.venue;
@@ -11,10 +17,29 @@ function pubMetaLine(pub) {
     return meta;
 }
 
+// Links to a folder (e.g. "blog/<post>/") rely on the server serving its index.html, as GitHub Pages does.
+// A page opened straight from disk (file://) gets a folder listing instead, so point at the file there.
+function siteHref(href) {
+    return location.protocol === 'file:' && href.endsWith('/') ? `${href}index.html` : href;
+}
+
 function pubLinksLine(pub) {
     return pub.links
-        .map(link => `<a class="pub-link" href="${link.href}">${link.label}</a>`)
+        .map(link => {
+            const target = link.internal ? ' target="_self"' : '';
+            const href = link.internal ? siteHref(link.href) : link.href;
+            return `<a class="pub-link"${target} href="${href}">${link.label}</a>`;
+        })
         .join('<span class="pub-sep">&middot;</span>');
+}
+
+function pubThumb(pub) {
+    // `animation` is a small page embedded as a live thumbnail; `image` is a static one.
+    const media = pub.animation
+        ? `<iframe src="${pub.animation}" title="" tabindex="-1" loading="lazy"></iframe>`
+        : `<img src="${pub.image}" alt="" loading="lazy">`;
+
+    return `<a class="pub-thumb" target="_self" href="${siteHref(pub.href)}" tabindex="-1" aria-hidden="true">${media}</a>`;
 }
 
 function renderPublication(pub) {
@@ -22,12 +47,22 @@ function renderPublication(pub) {
         ? `<p class="pub-links">${pubLinksLine(pub)}</p>`
         : '';
 
+    // Entries hosted on this site (blog posts) link their title and thumbnail in the same tab.
+    const title = pub.href
+        ? `<a target="_self" href="${siteHref(pub.href)}">${pub.title}</a>`
+        : pub.title;
+
+    const featured = pub.image || pub.animation;
+
     return `
-        <article class="pub">
-            <h3 class="pub-title">${pub.title}</h3>
-            <p class="pub-authors">${pub.authors}</p>
-            <p class="pub-meta">${pubMetaLine(pub)}</p>
-            ${links}
+        <article class="pub${featured ? ' pub-featured' : ''}">
+            ${featured ? pubThumb(pub) : ''}
+            <div class="pub-body">
+                <h3 class="pub-title">${title}</h3>
+                <p class="pub-authors">${pub.authors}</p>
+                <p class="pub-meta">${pubMetaLine(pub)}</p>
+                ${links}
+            </div>
         </article>
     `;
 }

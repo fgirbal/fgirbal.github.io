@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>On the Polysemanticity of the V Neuron — thumbnail</title>
+<style>
+/* The post's hero animation, re-laid out for the 3:2 thumbnail in the site's publication lists. */
+:root { --bg: #ffffff; --ink: #161616; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: var(--bg); }
+svg { display: block; width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+<svg id="hero-anim" viewBox="0 0 150 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+<script>
+// Same scene as the post's hero (index.html): cat photos and car photos reach 4e:55 through their own inputs
+// and through one shared input that morphs cat face -> V -> rounded V -> ellipse -> disk.
+// The routes keep the hero's geometry, squeezed into 150x100; icons and nodes are redrawn at thumbnail size.
+(function () {
+  const svg = document.getElementById("hero-anim"); if (!svg) return;
+  const NS = "http://www.w3.org/2000/svg";
+  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+  const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+  function resample(poly, N) {
+    const pts = poly.concat([poly[0]]), seg = []; let L = 0;
+    for (let i = 0; i < pts.length - 1; i++) { const d = Math.hypot(pts[i + 1][0] - pts[i][0], pts[i + 1][1] - pts[i][1]); seg.push(d); L += d; }
+    const out = []; let i = 0, acc = 0;
+    for (let k = 0; k < N; k++) {
+      const target = (k * L) / N;
+      while (i < seg.length - 1 && acc + seg[i] < target) { acc += seg[i]; i++; }
+      const t = seg[i] ? (target - acc) / seg[i] : 0;
+      out.push([pts[i][0] + t * (pts[i + 1][0] - pts[i][0]), pts[i][1] + t * (pts[i + 1][1] - pts[i][1])]);
+    }
+    return out;
+  }
+  const lerp = (a, b, t) => a.map((p, i) => [p[0] + (b[i][0] - p[0]) * t, p[1] + (b[i][1] - p[1]) * t]);
+  const toD = (pts, close = true) => "M" + pts.map((p) => p[0].toFixed(1) + "," + p[1].toFixed(1)).join("L") + (close ? "Z" : "");
+  const GA = "#16966a", GB = "#6250d6";
+
+  // ---- the hero's layout (680x132), mapped into the thumbnail (150x100)
+  const H = 132, CY = 66, CX = 340, NX = 640, SX = 46;
+  const catY = 34, carY = H - 34, topY = 16, botY = H - 16, xL = 272, xR = 408;
+  const X = (x) => 14 + (x - SX) * (126 / (NX - SX)), Y = (y) => 50 + (y - CY) * (100 / H);
+  const fit = (d) => d.replace(/(-?[\d.]+),(-?[\d.]+)/g, (_, x, y) => X(+x).toFixed(1) + "," + Y(+y).toFixed(1));
+
+  // ---- routes (each a single path so particles can follow it end to end)
+  const R = [
+    { d: `M${SX},${catY} C150,${catY} 190,${topY} ${xL},${topY} C470,${topY} 560,${CY - 3} ${NX},${CY - 2}`, c: GA, w: 0.25 },
+    { d: `M${SX},${catY} C190,${catY - 6} 260,${topY} ${xR},${topY} C520,${topY} 590,${CY - 3} ${NX},${CY - 2}`, c: GA, w: 0.2 },
+    { d: `M${SX},${catY} C170,${catY} 230,${CY} ${CX},${CY} L${NX},${CY - 1}`, c: GA, w: 0.55 },
+    { d: `M${SX},${carY} C150,${carY} 190,${botY} ${xL},${botY} C470,${botY} 560,${CY + 3} ${NX},${CY + 2}`, c: GB, w: 0.4 },
+    { d: `M${SX},${carY} C190,${carY + 6} 260,${botY} ${xR},${botY} C520,${botY} 590,${CY + 3} ${NX},${CY + 2}`, c: GB, w: 0.2 },
+    { d: `M${SX},${carY} C170,${carY} 230,${CY} ${CX},${CY} L${NX},${CY + 1}`, c: GB, w: 0.4 }];
+  const gPaths = el("g", {}, svg), gParts = el("g", {}, svg), gNodes = el("g", {}, svg);
+  R.forEach((r) => { r.el = el("path", { d: fit(r.d), style: `fill:none;stroke:${r.c};stroke-width:0.9;opacity:0.35` }, gPaths); r.len = r.el.getTotalLength(); });
+
+  // ---- input nodes: crops of what each real input responds to (first crop of its sprite)
+  const defs = el("defs", {}, svg);
+  const node = (x, y, src, col, id) => {
+    x = X(x); y = Y(y);
+    const rr = 7, cp = el("clipPath", { id }, defs); el("circle", { cx: x, cy: y, r: rr }, cp);
+    el("circle", { cx: x, cy: y, r: rr + 1, style: `fill:var(--bg);stroke:${col};stroke-width:1.2` }, gNodes);
+    const im = el("image", { x: x - rr, y: y - rr, width: rr * 6, height: rr * 2, "clip-path": `url(#${id})`, preserveAspectRatio: "xMinYMid slice" }, gNodes);
+    im.setAttribute("href", src); im.setAttributeNS("http://www.w3.org/1999/xlink", "href", src);
+  };
+  node(xL, topY, "img/ch/4e55_143.jpg", GA, "hc1"); node(xR, topY, "img/ch/4e55_401.jpg", GA, "hc2");
+  node(xL, botY, "img/ch/4e55_352.jpg", GB, "hk1"); node(xR, botY, "img/ch/4e55_201.jpg", GB, "hk2");
+
+  // ---- sources: a cat face and a car front, drawn as line icons
+  const sx = X(SX), cy1 = Y(catY), cy2 = Y(carY), IS = 0.17, CS = 0.55;
+  const icon = (pts, col, close = true) => el("path", { d: toD(pts, close), style: `fill:var(--bg);stroke:${col};stroke-width:1.1;stroke-linejoin:round` }, gNodes);
+  const catIcon = [[22, 8], [40, 28], [50, 26], [60, 28], [78, 8], [84, 40], [86, 58], [74, 78], [50, 90], [26, 78], [14, 58], [16, 40]].map(([x, y]) => [sx + (x - 50) * IS, cy1 + (y - 50) * IS]);
+  icon(catIcon, GA);
+  [[40, 56], [60, 56]].forEach(([x, y]) => el("circle", { cx: sx + (x - 50) * IS, cy: cy1 + (y - 50) * IS, r: 0.9, style: `fill:${GA}` }, gNodes));
+  const carBody = [[-15, -2], [-10, -9], [10, -9], [15, -2], [16, 8], [-16, 8]].map(([x, y]) => [sx + x * CS, cy2 + y * CS]);
+  icon(carBody, GB);
+  [[-9, 3], [9, 3]].forEach(([x, y]) => el("circle", { cx: sx + x * CS, cy: cy2 + y * CS, r: 1.1, style: `fill:none;stroke:${GB};stroke-width:0.9` }, gNodes));
+  el("path", { d: `M${sx - 2.2},${cy2 + 1.1} L${sx + 2.2},${cy2 + 1.1} M${sx - 2.2},${cy2 + 2.8} L${sx + 2.2},${cy2 + 2.8}`, style: `stroke:${GB};stroke-width:0.7` }, gNodes);
+  el("circle", { cx: X(NX), cy: Y(CY), r: 4, style: "fill:var(--ink)" }, gNodes);
+
+  // ---- the shared input: cat face -> V -> rounded V -> ellipse -> disk
+  const cat = [[22, 8], [40, 28], [50, 26], [60, 28], [78, 8], [84, 40], [86, 58], [74, 78], [50, 90], [26, 78], [14, 58], [16, 40]];
+  const vee = [[14, 16], [86, 16], [50, 90]];
+  const a = Math.atan(36 / 74), tt = 0.5 * Math.hypot(36, 74), rr = tt * Math.tan(a), dd = tt / Math.cos(a);
+  const round = [[14, 16], [86, 16]];
+  for (let i = 0; i <= 28; i++) { const g = a + (i / 28) * (Math.PI - 2 * a); round.push([50 + rr * Math.cos(g), 90 - dd + rr * Math.sin(g)]); }
+  const ell = [], disk = [];
+  for (let i = 0; i < 96; i++) { const g = -2.45 + (i / 96) * 2 * Math.PI; ell.push([50 + 36 * Math.cos(g), 50 + 24 * Math.sin(g)]); disk.push([50 + 30 * Math.cos(g), 50 + 30 * Math.sin(g)]); }
+  const S = 0.32, N = 150, cx = X(CX), cy = Y(CY);
+  const place = (poly) => poly.map(([x, y]) => [cx + (x - 50) * S, cy + (y - 50) * S]);
+  const shapes = [cat, vee, round, ell, disk].map((p) => resample(place(p), N));
+  const HOLD = [1.8, 1.1, 1.1, 1.1, 1.1], MORPH = 0.9, PERIOD = HOLD.reduce((x, y) => x + y, 0) + MORPH * shapes.length;
+  function shapeAt(time) {
+    let u = time % PERIOD;
+    for (let k = 0; k < shapes.length; k++) {
+      if (u < HOLD[k]) return { pts: shapes[k], eyes: k === 0 ? 1 : 0 };
+      u -= HOLD[k];
+      if (u < MORPH) { const m = ease(u / MORPH); return { pts: lerp(shapes[k], shapes[(k + 1) % shapes.length], m), eyes: k === 0 ? 1 - m : (k === shapes.length - 1 ? m : 0) }; }
+      u -= MORPH;
+    }
+    return { pts: shapes[0], eyes: 1 };
+  }
+  const shape = el("path", { style: "fill:var(--bg);stroke:var(--ink);stroke-width:1.1;stroke-linejoin:round" }, gNodes);
+  const eyes = [[38, 56], [62, 56]].map(([x, y]) => el("circle", { cx: cx + (x - 50) * S, cy: cy + (y - 50) * S, r: 1.3, style: "fill:var(--ink)" }, gNodes));
+
+  // ---- particles: each picks one of its source's routes
+  const pick = (green) => {
+    const opts = R.map((r, i) => [r, i]).filter(([r]) => r.c === (green ? GA : GB));
+    let x = Math.random() * opts.reduce((s2, [r]) => s2 + r.w, 0);
+    for (const [r, i] of opts) { x -= r.w; if (x <= 0) return i; }
+    return opts[opts.length - 1][1];
+  };
+  const parts = []; let last = -1, flip = false;
+  function frame(time) {
+    const sh = shapeAt(time);
+    shape.setAttribute("d", toD(sh.pts));
+    eyes.forEach((e) => e.setAttribute("opacity", sh.eyes.toFixed(3)));
+    if (reduce) return;
+    if (time - last > 0.2) { last = time; flip = !flip; const i = pick(flip);
+      parts.push({ i, t0: time, c: el("circle", { r: 1.5, style: `fill:${R[i].c}` }, gParts) }); }
+    for (let k = parts.length - 1; k >= 0; k--) {
+      const p = parts[k], dist = (time - p.t0) * 40;
+      if (dist >= R[p.i].len) { p.c.remove(); parts.splice(k, 1); continue; }
+      const pt = R[p.i].el.getPointAtLength(dist);
+      p.c.setAttribute("cx", pt.x.toFixed(1)); p.c.setAttribute("cy", pt.y.toFixed(1));
+    }
+  }
+  frame(0);
+  if (reduce) return;
+  let raf = null; const t0 = performance.now();
+  const tick = (now) => { frame((now - t0) / 1000); raf = requestAnimationFrame(tick); };
+  new IntersectionObserver((es) => es.forEach((e) => {
+    if (e.isIntersecting && !raf) raf = requestAnimationFrame(tick);
+    else if (!e.isIntersecting && raf) { cancelAnimationFrame(raf); raf = null; }
+  })).observe(svg);
+})();
+</script>
+</body>
+</html>

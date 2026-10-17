@@ -48,6 +48,21 @@ const HONORS = [
 
 const PUBLICATIONS = [
     {
+        title: "On the Polysemanticity of the V Neuron",
+        authors: "<strong>F. Eiras</strong>",
+        category: "Blog post",
+        date: "October 2026",
+        href: "blog/v-neuron-polysemanticity/",
+        animation: "blog/v-neuron-polysemanticity/thumb.html",
+        year: 2026,
+        type: "blog",
+        highlight: true,
+        links: [
+            { label: "post", href: "blog/v-neuron-polysemanticity/", internal: true },
+            { label: "code", href: "https://github.com/fgirbal/v-neuron-test" }
+        ]
+    },
+    {
         title: "Know Thy Judge: On the Robustness Meta-Evaluation of LLM Safety Judges",
         authors: "<strong>F. Eiras</strong>, E. Zemour, E. Lin, V. Mugunthan",
         venue: "ICLR Workshop (ICBINB), 2025",
