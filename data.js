@@ -48,6 +48,21 @@ const HONORS = [
 
 const PUBLICATIONS = [
     {
+        title: "How Targeted Is the Preeclampsia Diagnosis Hub?",
+        authors: "<strong>F. Eiras</strong>",
+        category: "Blog post",
+        date: "October 2026",
+        href: "blog/preeclampsia-hub/",
+        animation: "blog/preeclampsia-hub/thumb.html",
+        year: 2026,
+        type: "blog",
+        highlight: true,
+        links: [
+            { label: "post", href: "blog/preeclampsia-hub/", internal: true },
+            { label: "code", href: "https://github.com/fgirbal/qwen-diagnosis-hub-check" }
+        ]
+    },
+    {
         title: "On the Polysemanticity of the V Neuron",
         authors: "<strong>F. Eiras</strong>",
         category: "Blog post",

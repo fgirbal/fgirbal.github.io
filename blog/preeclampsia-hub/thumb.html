@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>How targeted is the preeclampsia diagnosis hub? — thumbnail</title>
+<style>
+/* The post's hero animation, re-laid out for the 3:2 thumbnail in the site's publication lists. */
+:root { --bg: #ffffff; --ink: #161616; --line: #ececec; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: var(--bg); }
+svg { display: block; width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+<svg id="hero" viewBox="0 0 150 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+<script>
+// Same scene as the post's hero (index.html): four symptoms flow into the four hub neurons and on to the next
+// question the model asks; every few seconds the neurons are removed, the flow goes around them and the answers change.
+// Text labels are left out at this size: symptoms are drawn as grey label marks and the answers as bars only.
+(function () {
+  const svg = document.getElementById("hero"); if (!svg) return;
+  const NS = "http://www.w3.org/2000/svg";
+  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+  const C = { pe: "#6250d6", soft: "#7a7a7a", ctrl: "#c4c4c4" };
+  // P(next word) on the essay's prompt for visual disturbances, protein in urine, itching, jaundice:
+  // with the four neurons, and with them removed (8-bit model, case S0-01 in the post's data).
+  const PI = [0.9091, 0.0453, 0, 0], PH = [0, 0, 0.5009, 0.1843];
+  const PERIOD = 10, ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+  const mixAt = (t) => { const u = t % PERIOD; return u < 4.2 ? 0 : u < 5 ? ease((u - 4.2) / 0.8) : u < 9.2 ? 1 : 1 - ease((u - 9.2) / 0.8); };
+
+  const sx = 30, hx = 73, hy = 50, bw = 40, ox = 104, rows = [18, 39, 61, 82], barW = 40;
+  const gP = el("g", {}, svg), gQ = el("g", {}, svg), gN = el("g", {}, svg);
+  const mk = (d, col, op, dash) => { const e = el("path", Object.assign({ d, fill: "none", stroke: col, "stroke-width": 1.1, opacity: op }, dash ? { "stroke-dasharray": dash } : {}), gP); return { el: e, len: e.getTotalLength() }; };
+  const inR = rows.map((y) => mk(`M${sx + 3},${y} C${sx + (hx - sx) * 0.55},${y} ${sx + (hx - sx) * 0.45},${hy} ${hx - bw / 2},${hy}`, C.ctrl, 0.9));
+  const outR = rows.map((y) => mk(`M${hx + bw / 2},${hy} C${hx + bw / 2 + (ox - hx) * 0.35},${hy} ${ox - (ox - hx) * 0.35},${y} ${ox - 4},${y}`, C.pe, 0.45));
+  const det = mk(`M${hx - bw / 2},${hy} C${hx - bw / 2 - 4},${hy + 30} ${hx + bw / 2 + 4},${hy + 30} ${hx + bw / 2},${hy}`, C.soft, 0, "2.5 2");
+
+  // symptoms: "30 weeks pregnant", "BP 162/98", "headache", "liver enzymes", as right-aligned label marks
+  [24, 15, 14, 21].forEach((len, i) => el("rect", { x: sx - len, y: rows[i] - 2, width: len, height: 4, rx: 2, style: "fill:#a8a8a8" }, gN));
+
+  // the hub: four neurons in one box
+  el("rect", { x: hx - bw / 2, y: hy - 9, width: bw, height: 18, rx: 5, style: `fill:var(--bg);stroke:${C.pe};stroke-width:1.5` }, gN);
+  const dots = [0, 1, 2, 3].map((k) => {
+    const cx = hx + (k - 1.5) * (bw / 5);
+    el("circle", { cx, cy: hy, r: 2.8, style: `fill:var(--bg);stroke:${C.pe};stroke-width:1.2` }, gN);
+    return el("circle", { cx, cy: hy, r: 2.8, style: `fill:${C.pe}` }, gN);
+  });
+
+  // the next question: one bar per candidate answer
+  const bars = rows.map((y) => {
+    el("rect", { x: ox, y: y - 2.25, width: barW, height: 4.5, rx: 2.25, style: "fill:var(--line)" }, gN);
+    return el("rect", { x: ox, y: y - 2.25, width: 0, height: 4.5, rx: 2.25, style: "fill:var(--ink)" }, gN);
+  });
+
+  let parts = [], last = -1;
+  function frame(t) {
+    const m = reduce ? 0 : mixAt(t);
+    dots.forEach((d) => d.setAttribute("opacity", (1 - m).toFixed(3)));
+    det.el.setAttribute("opacity", (0.7 * m).toFixed(3));
+    bars.forEach((b, j) => b.setAttribute("width", Math.max(0, barW * (PI[j] * (1 - m) + PH[j] * m)).toFixed(1)));
+    if (reduce) return;
+    if (t - last > 0.2) {
+      last = t;
+      parts.push({ seg: [inR[Math.floor(Math.random() * 4)]], k: 0, t0: t, dec: false, c: el("circle", { r: 1.8, style: `fill:${C.soft}` }, gQ) });
+    }
+    for (let n = parts.length - 1; n >= 0; n--) {
+      const p = parts[n];
+      let d = (t - p.t0) * 30;
+      if (d >= p.seg[p.k].len) {
+        if (!p.dec) {                                  // at the hub: through the four neurons, or around them once they're removed
+          p.dec = true;
+          const via = mixAt(t) < 0.5, P = via ? PI : PH, tot = P.reduce((a, b) => a + b, 0);
+          let r = Math.random() * tot, j = 0;
+          while (j < P.length - 1 && (r -= P[j]) > 0) j++;
+          p.seg = via ? [p.seg[0], outR[j]] : [p.seg[0], det, outR[j]];
+          p.via = via;
+        }
+        if (p.k + 1 >= p.seg.length) { p.c.remove(); parts.splice(n, 1); continue; }
+        p.k++; p.t0 = t; d = 0;
+        p.c.setAttribute("style", `fill:${p.via ? C.pe : C.soft}`);
+      }
+      const pt = p.seg[p.k].el.getPointAtLength(d);
+      p.c.setAttribute("cx", pt.x.toFixed(1)); p.c.setAttribute("cy", pt.y.toFixed(1));
+    }
+  }
+  const t0 = performance.now(), clock = () => (performance.now() - t0) / 1000;
+  frame(0);
+  if (reduce) return;
+  let raf = null;
+  const tick = () => { frame(clock()); raf = requestAnimationFrame(tick); };
+  new IntersectionObserver((es) => es.forEach((e) => {
+    if (e.isIntersecting && !raf) raf = requestAnimationFrame(tick);
+    else if (!e.isIntersecting && raf) { cancelAnimationFrame(raf); raf = null; }
+  })).observe(svg);
+})();
+</script>
+</body>
+</html>
